@@ -279,7 +279,7 @@ def validate(struct, schema_path):
         # this has the effect of converting any datetime objects to rfc3339 formatted strings
         struct = json.loads(json_dumps(struct))
     except ValueError as err:
-        LOG.error("struct is not serializable: %s", err.message)
+        LOG.error("struct is not serializable: %s", err)
         raise
 
     try:
@@ -289,12 +289,12 @@ def validate(struct, schema_path):
 
     except ValueError as err:
         # your json schema is broken
-        #raise ValidationError("validation error: '%s' for: %s" % (err.message, struct))
+        #raise ValidationError("validation error: '%s' for: %s" % (err, struct))
         raise
 
     except ValidationError as err:
         # your json is incorrect
-        #LOG.error("struct failed to validate against schema: %s" % err.message)
+        #LOG.error("struct failed to validate against schema: %s" % err)
         raise
 
 #
