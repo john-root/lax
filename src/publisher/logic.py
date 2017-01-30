@@ -104,6 +104,7 @@ def validate_pagination_params(page, per_page, order):
 def latest_published_article_versions(page=1, per_page=-1, order='DESC'):
     limit = per_page
     offset = per_page * (page - 1)
+    #offset = (page -1)  * per_page
 
     sql = """
     SELECT
@@ -135,6 +136,8 @@ def latest_published_article_versions(page=1, per_page=-1, order='DESC'):
 
     OFFSET %s""" % (limit, offset)
 
+    #print(sql)
+        
     q = models.ArticleVersion.objects.raw(sql)
 
     return total, list(q)

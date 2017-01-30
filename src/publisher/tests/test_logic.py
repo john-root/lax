@@ -1,3 +1,4 @@
+from django.test import Client
 import json
 from os.path import join
 from .base import BaseCase
@@ -253,3 +254,113 @@ class TestLogic(BaseCase):
 
     def test_article_snippet_json_not_found(self):
         pass
+
+
+class LatestArticleVersions(BaseCase):
+    def setUp(self):
+        self.journal = logic.journal()
+        import_all = [
+            '00353.1', # discussion, VOR
+
+            '00385.1', # commentary, VOR
+
+            '01328.1', # correction, VOR
+
+            '02619.1', # editorial, VOR
+
+            '03401.1', # research, POA
+            '03401.2', # POA
+            '03401.3', # VOR
+
+            '03665.1', # research, VOR
+
+            '06250.1', # research, POA
+            '06250.2', # POA
+            '06250.3', # VOR
+
+            '07301.1', # research, VOR
+
+            '08025.1', # research, POA
+            '08025.2', # VOR
+
+            '09571.1', # research, POA
+        ]
+        for subdir in import_all:
+            fname = subdir.replace('.', '-v')
+            fname = "elife-%s.xml.json" % fname
+            path = join(self.fixture_dir, 'ajson', fname)
+            #eif_ingestor.import_article_from_json_path(self.journal, path)
+            ajson_ingestor.ingest_publish(json.load(open(path, 'r')))            
+            
+    def tearDown(self):
+        pass
+
+    def test_nonpaginated(self):
+        expected = 10
+        self.assertEqual(expected, models.Article.objects.count())
+
+        # non paginated
+        total, lst = logic.latest_published_article_versions()
+        self.assertEqual(expected, total)
+        expected_page_total = 10
+        self.assertEqual(expected_page_total, len(lst))
+        seen = {}
+        for av in lst:
+            key = av.article.manuscript_id
+            self.assertFalse(key in seen, "I've seen msid %r before" % key)
+            seen[key] = av
+        self.assertEqual(total, len(seen))
+
+    def test_paginated(self):
+        expected = 10
+        self.assertEqual(expected, models.Article.objects.count())
+
+        # paginated
+        total, lst = logic.latest_published_article_versions(per_page=1) # 1 result per page
+        self.assertEqual(expected, total)
+        expected_page_total = 1
+        self.assertEqual(expected_page_total, len(lst))
+
+        # iterate through paged results and add results we've seen to a global list
+        seen = {}
+        for page in range(1, 10 + 1): # generates a range from 1..10
+            total, lst = logic.latest_published_article_versions(page=page, per_page=1) # 1 result per page
+            self.assertEqual(expected, total)
+            self.assertEqual(expected_page_total, len(lst))
+
+            av = lst[0]
+            key = av.article.manuscript_id
+            self.assertFalse(key in seen, "I've seen msid %r before" % key)
+            seen[key] = av
+        self.assertEqual(expected, len(seen))
+
+
+    def test_paginated_views(self):
+        self.c = Client()
+        expected = 10
+        expected_page_total = 1
+        
+        # iterate through paged results and add results we've seen to a global list
+        seen = {}
+        for page in range(1, 10 + 1): # generates a range from 1..10
+            #total, lst = logic.latest_published_article_versions(page=page, per_page=1) # 1 result per page
+
+            url = reverse('v2:article-list')
+            resp = self.c.get(url, {'page': page, 'per-page': 1})
+            data = resp.data
+            total = data['total']
+            lst = data['items']
+
+            print(lst)
+            
+            self.assertEqual(expected, total)
+            self.assertEqual(expected_page_total, len(lst))
+
+            av = lst[0]
+            key = av['id']
+            self.assertFalse(key in seen, "I've seen msid %r before" % key)
+            seen[key] = av
+        self.assertEqual(expected, len(seen))
+
+from django.core.urlresolvers import reverse
+

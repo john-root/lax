@@ -122,7 +122,7 @@ def job(print_queue, action, path, force, dry_run):
 
 def handle_many(print_queue, action, path, force, dry_run):
     json_files = utils.resolve_path(path)
-    cregex = re.compile(r'^.*/elife-\d{5,}-v\d\.xml\.json$')
+    cregex = re.compile(r'^.*/elife-\d{5,}-v\d\.xml\.json$') # urgh. requires '.xml.json'
     ajson_file_list = lfilter(cregex.match, json_files)
     if not ajson_file_list:
         LOG.info("found no article json at %r" % os.path.abspath(path))

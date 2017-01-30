@@ -1,0 +1,301 @@
+{
+    "snippet": {
+        "status": "poa", 
+        "doi": "10.7554/eLife.09571", 
+        "versionDate": "2015-11-09T00:00:00Z", 
+        "title": "Chromatin dynamics and the role of G9a in gene regulation and enhancer silencing during early mouse development", 
+        "authorLine": "Jan J Zylicz et al", 
+        "abstract": {
+            "content": [
+                {
+                    "text": "Early mouse development is accompanied by dynamic changes in chromatin modifications, including G9a-mediated histone H3 lysine 9 dimethylation (H3K9me2), which is essential for embryonic development. Here we show that genome-wide accumulation of H3K9me2 is crucial for postimplantation development, and coincides with redistribution of EZH2-dependent histone H3 lysine 27 trimethylation (H3K27me3). Loss of G9a or EZH2 results in upregulation of distinct gene sets involved in cell cycle regulation, germline development and embryogenesis. Notably, the H3K9me2 modification extends to active enhancer elements where it promotes developmentally-linked gene silencing and directly marks promoters and gene bodies. This epigenetic mechanism is important for priming gene regulatory networks for critical cell fate decisions in rapidly proliferating postimplantation epiblast cells.", 
+                    "type": "paragraph"
+                }
+            ]
+        }, 
+        "elocationId": "e09571", 
+        "volume": 4, 
+        "version": 1, 
+        "published": "2015-11-09T00:00:00Z", 
+        "pdf": "https://publishing-cdn.elifesciences.org/09571/elife-09571-v1.pdf", 
+        "subjects": [
+            {
+                "id": "developmental-biology-stem-cells", 
+                "name": "Developmental Biology and Stem Cells"
+            }, 
+            {
+                "id": "genes-chromosomes", 
+                "name": "Genes and Chromosomes"
+            }
+        ], 
+        "researchOrganisms": [
+            "Mouse"
+        ], 
+        "type": "research-article", 
+        "id": "09571"
+    }, 
+    "article": {
+        "versionDate": "2099-01-01T00:00:00Z", 
+        "abstract": {
+            "content": [
+                {
+                    "text": "Early mouse development is accompanied by dynamic changes in chromatin modifications, including G9a-mediated histone H3 lysine 9 dimethylation (H3K9me2), which is essential for embryonic development. Here we show that genome-wide accumulation of H3K9me2 is crucial for postimplantation development, and coincides with redistribution of EZH2-dependent histone H3 lysine 27 trimethylation (H3K27me3). Loss of G9a or EZH2 results in upregulation of distinct gene sets involved in cell cycle regulation, germline development and embryogenesis. Notably, the H3K9me2 modification extends to active enhancer elements where it promotes developmentally-linked gene silencing and directly marks promoters and gene bodies. This epigenetic mechanism is important for priming gene regulatory networks for critical cell fate decisions in rapidly proliferating postimplantation epiblast cells.", 
+                    "type": "paragraph"
+                }
+            ]
+        }, 
+        "additionalFiles": [
+            {
+                "id": "SD1-data", 
+                "title": "Supplementary file 1.", 
+                "filename": "elife-09571-supp-v1.zip", 
+                "mediaType": "application/zip", 
+                "uri": "https://publishing-cdn.elifesciences.org/09571/elife-09571-supp-v1.zip"
+            }
+        ], 
+        "subjects": [
+            {
+                "id": "developmental-biology-stem-cells", 
+                "name": "Developmental Biology and Stem Cells"
+            }, 
+            {
+                "id": "genes-chromosomes", 
+                "name": "Genes and Chromosomes"
+            }
+        ], 
+        "copyright": {
+            "holder": "Zylicz et al", 
+            "statement": "This article is distributed under the terms of the Creative Commons Attribution License permitting unrestricted use and redistribution provided that the original author and source are credited.", 
+            "license": "CC-BY-4.0"
+        }, 
+        "title": "Chromatin dynamics and the role of G9a in gene regulation and enhancer silencing during early mouse development", 
+        "authorLine": "Jan J Zylicz et al", 
+        "id": "09571", 
+        "version": 1, 
+        "statusDate": "2099-01-01T00:00:00Z", 
+        "type": "research-article", 
+        "status": "poa", 
+        "volume": 4, 
+        "researchOrganisms": [
+            "Mouse"
+        ], 
+        "-patched": true, 
+        "authors": [
+            {
+                "affiliations": [
+                    {
+                        "name": [
+                            "Wellcome Trust/Cancer Research UK Gurdon Institute", 
+                            "University of Cambridge"
+                        ], 
+                        "address": {
+                            "formatted": [
+                                "Cambridge", 
+                                "United Kingdom"
+                            ], 
+                            "components": {
+                                "country": "United Kingdom", 
+                                "locality": [
+                                    "Cambridge"
+                                ]
+                            }
+                        }
+                    }
+                ], 
+                "type": "person", 
+                "name": {
+                    "index": "Zylicz, Jan J", 
+                    "preferred": "Jan J Zylicz"
+                }, 
+                "competingInterests": "The authors declare that no competing interests exist."
+            }, 
+            {
+                "affiliations": [
+                    {
+                        "name": [
+                            "Wellcome Trust/Medical Research Council Stem Cell Institute", 
+                            "University of Cambridge"
+                        ], 
+                        "address": {
+                            "formatted": [
+                                "Cambridge", 
+                                "United Kingdom"
+                            ], 
+                            "components": {
+                                "country": "United Kingdom", 
+                                "locality": [
+                                    "Cambridge"
+                                ]
+                            }
+                        }
+                    }
+                ], 
+                "type": "person", 
+                "name": {
+                    "index": "Dietmann, Sabine", 
+                    "preferred": "Sabine Dietmann"
+                }, 
+                "competingInterests": "The authors declare that no competing interests exist."
+            }, 
+            {
+                "affiliations": [
+                    {
+                        "name": [
+                            "Wellcome Trust/Cancer Research UK Gurdon Institute", 
+                            "University of Cambridge"
+                        ], 
+                        "address": {
+                            "formatted": [
+                                "Cambridge", 
+                                "United Kingdom"
+                            ], 
+                            "components": {
+                                "country": "United Kingdom", 
+                                "locality": [
+                                    "Cambridge"
+                                ]
+                            }
+                        }
+                    }
+                ], 
+                "type": "person", 
+                "name": {
+                    "index": "G\u00fcnesdogan, Ufuk", 
+                    "preferred": "Ufuk G\u00fcnesdogan"
+                }, 
+                "competingInterests": "The authors declare that no competing interests exist."
+            }, 
+            {
+                "affiliations": [
+                    {
+                        "name": [
+                            "Wellcome Trust/Cancer Research UK Gurdon Institute", 
+                            "University of Cambridge"
+                        ], 
+                        "address": {
+                            "formatted": [
+                                "Cambridge", 
+                                "United Kingdom"
+                            ], 
+                            "components": {
+                                "country": "United Kingdom", 
+                                "locality": [
+                                    "Cambridge"
+                                ]
+                            }
+                        }
+                    }
+                ], 
+                "type": "person", 
+                "name": {
+                    "index": "Hackett, Jamie A", 
+                    "preferred": "Jamie A Hackett"
+                }, 
+                "competingInterests": "The authors declare that no competing interests exist."
+            }, 
+            {
+                "affiliations": [
+                    {
+                        "name": [
+                            "Wellcome Trust/Cancer Research UK Gurdon Institute", 
+                            "University of Cambridge"
+                        ], 
+                        "address": {
+                            "formatted": [
+                                "Cambridge", 
+                                "United Kingdom"
+                            ], 
+                            "components": {
+                                "country": "United Kingdom", 
+                                "locality": [
+                                    "Cambridge"
+                                ]
+                            }
+                        }
+                    }
+                ], 
+                "type": "person", 
+                "name": {
+                    "index": "Cougot, Delphine", 
+                    "preferred": "Delphine Cougot"
+                }, 
+                "competingInterests": "The authors declare that no competing interests exist."
+            }, 
+            {
+                "affiliations": [
+                    {
+                        "name": [
+                            "Wellcome Trust/Cancer Research UK Gurdon Institute", 
+                            "University of Cambridge"
+                        ], 
+                        "address": {
+                            "formatted": [
+                                "Cambridge", 
+                                "United Kingdom"
+                            ], 
+                            "components": {
+                                "country": "United Kingdom", 
+                                "locality": [
+                                    "Cambridge"
+                                ]
+                            }
+                        }
+                    }
+                ], 
+                "type": "person", 
+                "name": {
+                    "index": "Lee, Caroline", 
+                    "preferred": "Caroline Lee"
+                }, 
+                "competingInterests": "The authors declare that no competing interests exist."
+            }, 
+            {
+                "affiliations": [
+                    {
+                        "name": [
+                            "Wellcome Trust / Cancer Research UK Gurdon Institute", 
+                            "University of Cambridge"
+                        ], 
+                        "address": {
+                            "formatted": [
+                                "Cambridge", 
+                                "United Kingdom"
+                            ], 
+                            "components": {
+                                "country": "United Kingdom", 
+                                "locality": [
+                                    "Cambridge"
+                                ]
+                            }
+                        }
+                    }
+                ], 
+                "emailAddresses": [
+                    "a.surani@gurdon.cam.ac.uk"
+                ], 
+                "type": "person", 
+                "name": {
+                    "index": "Surani, M Azim", 
+                    "preferred": "M Azim Surani"
+                }, 
+                "competingInterests": "The authors declare that no competing interests exist."
+            }
+        ], 
+        "ethics": [
+            {
+                "text": "Animal experimentation: All husbandry and experiments involving mice were authorized by a UK Home Office Project License 80/2637 and carried out in a Home Office-designated facility.", 
+                "type": "paragraph"
+            }
+        ], 
+        "elocationId": "e09571", 
+        "stage": "published", 
+        "doi": "10.7554/eLife.09571", 
+        "published": "2015-11-09T00:00:00Z", 
+        "pdf": "https://publishing-cdn.elifesciences.org/09571/elife-09571-v1.pdf"
+    }, 
+    "journal": {
+        "issn": "2050-084X", 
+        "id": "eLife", 
+        "title": "eLife"
+    }
+}

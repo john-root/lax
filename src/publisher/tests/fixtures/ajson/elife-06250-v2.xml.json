@@ -1,0 +1,152 @@
+{
+    "snippet": {
+        "status": "poa", 
+        "doi": "10.7554/eLife.06250", 
+        "elocationId": "e06250", 
+        "title": "General features of the retinal connectome determine the computation of motion anticipation", 
+        "authorLine": "Jamie Johnston, Leon Lagnado", 
+        "abstract": {
+            "content": [
+                {
+                    "text": "Motion anticipation allows the visual system to compensate for the slow speed of phototransduction so that a moving object can be accurately located. This correction is already present in the signal that ganglion cells send from the retina but the biophysical mechanisms underlying this computation are not known. Here we demonstrate that motion anticipation is computed autonomously within the dendritic tree of each ganglion cell and relies on feedforward inhibition. The passive and non-linear interaction of excitatory and inhibitory synapses enables the somatic voltage to encode the actual position of a moving object instead of its delayed representation. General rather than specific features of the retinal connectome govern this computation: an excess of inhibitory inputs over excitatory, with both being randomly distributed, allows tracking of all directions of motion, while the average distance between inputs determines the object velocities that can be compensated for.", 
+                    "type": "paragraph"
+                }
+            ]
+        }, 
+        "volume": 4, 
+        "version": 2, 
+        "published": "2015-03-18T00:00:00Z", 
+        "pdf": "https://publishing-cdn.elifesciences.org/06250/elife-06250-v2.pdf", 
+        "subjects": [
+            {
+                "id": "neuroscience", 
+                "name": "Neuroscience"
+            }
+        ], 
+        "researchOrganisms": [
+            "Other"
+        ], 
+        "type": "research-article", 
+        "id": "06250"
+    }, 
+    "article": {
+        "versionDate": "2099-01-01T00:00:00Z", 
+        "abstract": {
+            "content": [
+                {
+                    "text": "Motion anticipation allows the visual system to compensate for the slow speed of phototransduction so that a moving object can be accurately located. This correction is already present in the signal that ganglion cells send from the retina but the biophysical mechanisms underlying this computation are not known. Here we demonstrate that motion anticipation is computed autonomously within the dendritic tree of each ganglion cell and relies on feedforward inhibition. The passive and non-linear interaction of excitatory and inhibitory synapses enables the somatic voltage to encode the actual position of a moving object instead of its delayed representation. General rather than specific features of the retinal connectome govern this computation: an excess of inhibitory inputs over excitatory, with both being randomly distributed, allows tracking of all directions of motion, while the average distance between inputs determines the object velocities that can be compensated for.", 
+                    "type": "paragraph"
+                }
+            ]
+        }, 
+        "additionalFiles": [
+            {
+                "id": "SD1-data", 
+                "title": "Supplementary file 1.", 
+                "filename": "elife-06250-supp-v2.zip", 
+                "mediaType": "application/zip", 
+                "uri": "https://publishing-cdn.elifesciences.org/06250/elife-06250-supp-v2.zip"
+            }
+        ], 
+        "subjects": [
+            {
+                "id": "neuroscience", 
+                "name": "Neuroscience"
+            }
+        ], 
+        "copyright": {
+            "holder": "Johnston & Lagnado", 
+            "statement": "This article is distributed under the terms of the Creative Commons Attribution License permitting unrestricted use and redistribution provided that the original author and source are credited.", 
+            "license": "CC-BY-4.0"
+        }, 
+        "title": "General features of the retinal connectome determine the computation of motion anticipation", 
+        "authorLine": "Jamie Johnston, Leon Lagnado", 
+        "id": "06250", 
+        "version": 2, 
+        "statusDate": "2099-01-01T00:00:00Z", 
+        "type": "research-article", 
+        "status": "poa", 
+        "volume": 4, 
+        "researchOrganisms": [
+            "Other"
+        ], 
+        "-patched": true, 
+        "authors": [
+            {
+                "affiliations": [
+                    {
+                        "name": [
+                            "School of Life Sciences", 
+                            "University of Sussex"
+                        ], 
+                        "address": {
+                            "formatted": [
+                                "Brighton", 
+                                "United Kingdom"
+                            ], 
+                            "components": {
+                                "country": "United Kingdom", 
+                                "locality": [
+                                    "Brighton"
+                                ]
+                            }
+                        }
+                    }
+                ], 
+                "emailAddresses": [
+                    "J.johnston@sussex.ac.uk"
+                ], 
+                "type": "person", 
+                "name": {
+                    "index": "Johnston, Jamie", 
+                    "preferred": "Jamie Johnston"
+                }, 
+                "competingInterests": "The authors declare that no competing interests exist."
+            }, 
+            {
+                "affiliations": [
+                    {
+                        "name": [
+                            "School of Life Sciences", 
+                            "University of Sussex"
+                        ], 
+                        "address": {
+                            "formatted": [
+                                "Brighton", 
+                                "United Kingdom"
+                            ], 
+                            "components": {
+                                "country": "United Kingdom", 
+                                "locality": [
+                                    "Brighton"
+                                ]
+                            }
+                        }
+                    }
+                ], 
+                "type": "person", 
+                "name": {
+                    "index": "Lagnado, Leon", 
+                    "preferred": "Leon Lagnado"
+                }, 
+                "competingInterests": "The authors declare that no competing interests exist."
+            }
+        ], 
+        "ethics": [
+            {
+                "text": "Animal experimentation: All procedures were carried out in accordance with the UK Animals (Scientific Procedures) act 1986 and approved by the local ethical review committee at the University of Sussex.", 
+                "type": "paragraph"
+            }
+        ], 
+        "elocationId": "e06250", 
+        "stage": "published", 
+        "doi": "10.7554/eLife.06250", 
+        "published": "2015-03-18T00:00:00Z", 
+        "pdf": "https://publishing-cdn.elifesciences.org/06250/elife-06250-v2.pdf"
+    }, 
+    "journal": {
+        "issn": "2050-084X", 
+        "id": "eLife", 
+        "title": "eLife"
+    }
+}
