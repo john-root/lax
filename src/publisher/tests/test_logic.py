@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.test import Client
 import json
 from os.path import join
@@ -338,29 +339,25 @@ class LatestArticleVersions(BaseCase):
     def test_paginated_views(self):
         self.c = Client()
         expected = 10
-        expected_page_total = 1
-        
+
+        import math
         # iterate through paged results and add results we've seen to a global list
-        seen = {}
-        for page in range(1, 10 + 1): # generates a range from 1..10
-            #total, lst = logic.latest_published_article_versions(page=page, per_page=1) # 1 result per page
+        for per_page in range(1, 10+1):
+            seen = {}
+            num_pages = math.ceil(expected / per_page)
+            for page in range(1, num_pages + 1):
+                print('per-page',per_page,'page',page,'num pages',num_pages)                
+                url = reverse('v2:article-list')
+                resp = self.c.get(url, {'page': page, 'per-page': per_page})
+                data = resp.data
+                total = data['total']
+                lst = data['items']
 
-            url = reverse('v2:article-list')
-            resp = self.c.get(url, {'page': page, 'per-page': 1})
-            data = resp.data
-            total = data['total']
-            lst = data['items']
+                self.assertEqual(expected, total)
+                self.assertTrue(len(lst) <= per_page)
 
-            print(lst)
-            
-            self.assertEqual(expected, total)
-            self.assertEqual(expected_page_total, len(lst))
-
-            av = lst[0]
-            key = av['id']
-            self.assertFalse(key in seen, "I've seen msid %r before" % key)
-            seen[key] = av
-        self.assertEqual(expected, len(seen))
-
-from django.core.urlresolvers import reverse
-
+                for av in lst:
+                    key = av['id']
+                    self.assertFalse(key in seen, "I've seen msid %r before (page %s, per_page %s, got: %s seen: %s)" % (key, page, per_page, av, seen))
+                    seen[key] = av
+            self.assertEqual(expected, len(seen))
