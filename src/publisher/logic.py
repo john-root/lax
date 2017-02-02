@@ -107,6 +107,7 @@ def latest_published_article_versions(page=1, per_page=-1, order='DESC'):
     #offset = (page -1)  * per_page
 
     sql = """
+    -- SELECT DISTINCT
     SELECT
        pav.id, pav.article_id, pav.title, pav.version, pav.status, pav.datetime_published,
        pav.datetime_record_created, pav.datetime_record_updated
@@ -136,9 +137,12 @@ def latest_published_article_versions(page=1, per_page=-1, order='DESC'):
 
     OFFSET %s""" % (limit, offset)
 
-    #print(sql)
-        
+    # print(sql)
+    #LOG.info("sql: %s",sql)
+
     q = models.ArticleVersion.objects.raw(sql)
+
+    # LOG.info("query: %s", q.query) # identical to above
 
     return total, list(q)
 

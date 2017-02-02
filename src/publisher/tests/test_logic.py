@@ -291,8 +291,8 @@ class LatestArticleVersions(BaseCase):
             fname = "elife-%s.xml.json" % fname
             path = join(self.fixture_dir, 'ajson', fname)
             #eif_ingestor.import_article_from_json_path(self.journal, path)
-            ajson_ingestor.ingest_publish(json.load(open(path, 'r')))            
-            
+            ajson_ingestor.ingest_publish(json.load(open(path, 'r')))
+
     def tearDown(self):
         pass
 
@@ -342,11 +342,11 @@ class LatestArticleVersions(BaseCase):
 
         import math
         # iterate through paged results and add results we've seen to a global list
-        for per_page in range(1, 10+1):
+        for per_page in range(1, 10 + 1):
             seen = {}
             num_pages = math.ceil(expected / per_page)
             for page in range(1, num_pages + 1):
-                print('per-page',per_page,'page',page,'num pages',num_pages)                
+                print('per-page', per_page, 'page', page, 'num pages', num_pages)
                 url = reverse('v2:article-list')
                 resp = self.c.get(url, {'page': page, 'per-page': per_page})
                 data = resp.data
