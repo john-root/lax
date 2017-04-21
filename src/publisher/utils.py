@@ -86,9 +86,12 @@ def doi2msid(doi):
     prefix = '10.7554/eLife.'
     return doi[len(prefix):].lstrip('0')
 
+def pad_msid(msid):
+    return '%05d' % int(msid)
+
 def msid2doi(msid):
     assert isint(msid), "given msid must be an integer: %r" % msid
-    return '10.7554/eLife.%05d' % int(msid)
+    return '10.7554/eLife.%s' % pad_msid(msid)
 
 def compfilter(fnlist):
     "returns true if given val "
