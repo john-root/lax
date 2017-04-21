@@ -1,30 +1,24 @@
-"""generalised settings for the Lax project.
-
+"""
 per-instance settings are in /path/to/app/app.cfg
-example settings can be found in /path/to/lax/elife.cfg
-
-./install.sh will create a symlink from dev.cfg -> lax.cfg if lax.cfg not found."""
+example settings can be found in /path/to/app/elife.cfg
+./install.sh will create a symlink from elife.cfg -> app.cfg if app.cfg not found."""
 
 import os
 from os.path import join
-from datetime import datetime
 import configparser as configparser
 from pythonjsonlogger import jsonlogger
-import yaml
-from et3.render import render_item
-from et3.extract import path as p
 
 PROJECT_NAME = 'lax'
 
 # Build paths inside the project like this: os.path.join(SRC_DIR, ...)
-SRC_DIR = os.path.dirname(os.path.dirname(__file__)) # ll: /path/to/lax/src/
-PROJECT_DIR = os.path.dirname(SRC_DIR) # ll: /path/to/lax/
+SRC_DIR = os.path.dirname(os.path.dirname(__file__)) # ll: /path/to/app/src/
+PROJECT_DIR = os.path.dirname(SRC_DIR) # ll: /path/to/app/
 
 CFG_NAME = 'app.cfg'
 DYNCONFIG = configparser.SafeConfigParser(**{
     'allow_no_value': True,
     'defaults': {'dir': SRC_DIR, 'project': PROJECT_NAME}})
-DYNCONFIG.read(join(PROJECT_DIR, CFG_NAME)) # ll: /path/to/lax/app.cfg
+DYNCONFIG.read(join(PROJECT_DIR, CFG_NAME)) # ll: /path/to/app/app.cfg
 
 def cfg(path, default=0xDEADBEEF):
     lu = {'True': True, 'true': True, 'False': False, 'false': False} # cast any obvious booleans
@@ -38,6 +32,7 @@ def cfg(path, default=0xDEADBEEF):
     except Exception as err:
         print('error on %r: %s' % (path, err))
 
+from datetime import datetime
 PRIMARY_JOURNAL = {
     'name': cfg('journal.name'),
     'inception': datetime.strptime(cfg('journal.inception'), "%Y-%m-%d")
@@ -153,6 +148,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
@@ -208,10 +205,13 @@ SCHEMA_IDX = {
 API_PATH = join(SCHEMA_PATH, 'api.raml')
 
 def _load_api_raml(path):
+    import yaml
     # load the api.raml file, ignoring any "!include" commands
     yaml.add_multi_constructor('', lambda *args: '[disabled]')
     return yaml.load(open(path, 'r'))['traits']['paged']['queryParameters']
 
+from et3.render import render_item
+from et3.extract import path as p
 API_OPTS = render_item({
     'per_page': [p('per-page.default'), int],
     'min_per_page': [p('per-page.minimum'), int],
@@ -257,12 +257,11 @@ VALIDATE_FAILS_FORCE = cfg('general.validate-fails-force', True)
 # logging
 #
 
-LOG_NAME = '%s.log' % PROJECT_NAME # ll: lax.log
+LOG_NAME = '%s.log' % PROJECT_NAME # ll: appname.log
+LOG_DIR = '/var/log/' if ENV != DEV else './'
+LOG_FILE = join(LOG_DIR, LOG_NAME) # ll: /abs/path/appname.log
 
 INGESTION_LOG_NAME = 'ingestion-%s.log' % PROJECT_NAME
-
-LOG_DIR = '/var/log/' if ENV != DEV else './'
-LOG_FILE = join(LOG_DIR, LOG_NAME) # ll: /var/log/lax.log
 INGESTION_LOG_FILE = join(LOG_DIR, INGESTION_LOG_NAME) # ll: /var/log/lax.log
 
 # whereever our log files are, ensure they are writable before we do anything else.
